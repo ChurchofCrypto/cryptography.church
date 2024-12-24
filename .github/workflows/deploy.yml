@@ -41,3 +41,7 @@ jobs:
       - name: Deploy to S3
         run: |
           ./scripts/deploy.sh
+
+      - name: Invalidate CloudFront distribution
+        run: |
+          ./scripts/invalidate-distribution.sh
