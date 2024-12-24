@@ -6,27 +6,43 @@ BUILD_DIRECTORY="build"
 
 # Build the React app
 echo "Building React app..."
-npm run build
+pnpm run build
 
-# Sync build folder with S3 bucket
+# Deploy to S3 with proper content types and caching
 echo "Deploying to S3..."
-aws s3 sync $BUILD_DIRECTORY s3://$BUCKET_NAME --delete
 
-# Set proper cache headers
-echo "Setting cache headers..."
-aws s3 cp s3://$BUCKET_NAME s3://$BUCKET_NAME \
+# HTML files
+aws s3 sync $BUILD_DIRECTORY s3://$BUCKET_NAME \
+  --delete \
   --exclude "*" \
   --include "*.html" \
-  --include "*.json" \
-  --cache-control "no-cache" \
-  --recursive \
+  --content-type "text/html" \
+  --cache-control "max-age=1800" \
   --metadata-directive REPLACE
 
-aws s3 cp s3://$BUCKET_NAME s3://$BUCKET_NAME \
+# JavaScript files
+aws s3 sync $BUILD_DIRECTORY s3://$BUCKET_NAME \
   --exclude "*" \
-  --include "static/*" \
-  --cache-control "public, max-age=31536000" \
-  --recursive \
+  --include "*.js" \
+  --content-type "application/javascript" \
+  --cache-control "max-age=1800" \
+  --metadata-directive REPLACE
+
+# CSS files
+aws s3 sync $BUILD_DIRECTORY s3://$BUCKET_NAME \
+  --exclude "*" \
+  --include "*.css" \
+  --content-type "text/css" \
+  --cache-control "max-age=1800" \
+  --metadata-directive REPLACE
+
+# Everything else
+aws s3 sync $BUILD_DIRECTORY s3://$BUCKET_NAME \
+  --delete \
+  --exclude "*.html" \
+  --exclude "*.js" \
+  --exclude "*.css" \
+  --cache-control "max-age=1800" \
   --metadata-directive REPLACE
 
 echo "Deployment complete!"
