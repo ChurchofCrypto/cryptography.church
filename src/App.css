@@ -116,3 +116,36 @@ h1 {
   }
 }
 
+@media (max-width: 768px) {
+  .App-header {
+    padding: 20px;
+  }
+
+  .App-header h1 {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 16px;
+  }
+
+  .main-nav {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .nav-link {
+    width: 100%;
+    padding: 10px;
+  }
+
+  .crypto-symbol {
+    margin: 20px 0;
+  }
+
+  .crypto-quote {
+    font-size: 16px;
+    padding: 0 20px;
+  }
+}
+
