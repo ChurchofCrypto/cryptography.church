@@ -131,4 +131,64 @@ h4 {
   font-size: 1.4rem;
   margin: 2rem 0 1rem 0;
   text-shadow: 0 0 5px #00ff00;
+}
+
+h5 {
+  color: #00cc00;
+  font-size: 1.2rem;
+  margin: 1.5rem 0 0.5rem 0;
+  text-shadow: 0 0 5px #00cc00;
+}
+
+.event-description {
+  font-style: italic;
+  color: #00cc00;
+  margin-bottom: 2rem;
+}
+
+.previous-gatherings {
+  margin-top: 3rem;
+  border-top: 1px solid rgba(0, 255, 0, 0.3);
+  padding-top: 2rem;
+}
+
+.previous-gatherings summary {
+  cursor: pointer;
+  padding: 1rem;
+  border: 1px solid #00ff00;
+  border-radius: 4px;
+  background: rgba(0, 255, 0, 0.05);
+  transition: all 0.3s ease;
+  margin-bottom: 1rem;
+  list-style: none;
+}
+
+.previous-gatherings summary:hover {
+  background: rgba(0, 255, 0, 0.1);
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+}
+
+.previous-gatherings summary h3 {
+  margin: 0;
+  display: inline-block;
+}
+
+.previous-gatherings summary::marker {
+  display: none;
+}
+
+.previous-gatherings summary::before {
+  content: "▶ ";
+  color: #00ff00;
+  font-weight: bold;
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.previous-gatherings[open] summary::before {
+  transform: rotate(90deg);
+}
+
+.previous-gatherings .event-header {
+  margin-top: 1rem;
 } 
