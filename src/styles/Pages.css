@@ -132,3 +132,7 @@ h4 {
   margin: 2rem 0 1rem 0;
   text-shadow: 0 0 5px #00ff00;
 } 
+.cipher-link {
+  color: inherit;
+  text-decoration: underline;
+}
