@@ -22,7 +22,7 @@ function Ciphers() {
           </ul>
           <p>
             Why the old ciphers fall, and where to put your faith instead:{' '}
-            <a href="/alberti.html#security" className="cipher-link">Faith, not security</a>
+            <a href="/alberti.html#security" className="cipher-link">Secret, but not secure</a>
           </p>
         </div>
 
