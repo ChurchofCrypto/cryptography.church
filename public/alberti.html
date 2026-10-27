@@ -126,6 +126,15 @@ textarea { width: 100%; min-height: 84px; resize: vertical; line-height: 1.4 }
 .reasons > div { border-top: 1px solid var(--line); padding-top: 14px }
 .faith > div { background: var(--surface); border: 1px solid var(--line); border-radius: 12px; padding: 18px 20px }
 .faith p, .reasons p { font-size: 17px }
+.faith h3 { font-size: 19px; font-weight: 500; line-height: 1.35 }
+.faith .impl { font-size: 15px; color: var(--muted) }
+.refs { margin: 0; padding-left: 1.2em; display: grid; gap: 8px; max-width: 70ch }
+.table-wrap { overflow-x: auto }
+table.std { border-collapse: collapse; width: 100%; min-width: 620px; font-size: 17px }
+table.std th, table.std td { text-align: left; vertical-align: top; padding: 10px 14px 10px 0; border-top: 1px solid var(--line) }
+table.std thead th { font-size: 13px; letter-spacing: .14em; text-transform: uppercase; color: var(--muted); font-weight: 500; border-top: 0 }
+table.std tbody th { font-weight: 500; white-space: nowrap }
+table.std td:last-child { color: var(--muted) }
 section a { color: var(--gold) }
 .previews { display: grid; grid-template-columns: 1fr 1fr; gap: 14px }
 .previews img { width: 100%; border-radius: 4px; box-shadow: 0 1px 2px rgba(0,0,0,.18), 0 6px 18px rgba(0,0,0,.12) }
@@ -297,26 +306,26 @@ footer i { color: var(--ink) }
 
     <h2 style="margin-top:28px">Where to put your faith</h2>
     <p class="muted" style="max-width:64ch">Alberti's lasting lesson is that security lives in the key and in how you share it, never in the
-      device. These protocols carry that lesson into the present. Use them; don't build your own.</p>
-    <div class="faith">
-      <div><h3><a href="https://signal.org" target="_blank" rel="noopener">Signal</a></h3>
-        <p>End-to-end encrypted messages and calls. Keys change with every message (the Double Ratchet), so a stolen phone
-          does not expose old conversations, and the key agreement resists future quantum computers (PQXDH). Compare
-          <b>safety numbers</b> in person: that is the modern handing-over of the disk.</p></div>
-      <div><h3><a href="https://matrix.org" target="_blank" rel="noopener">Matrix</a> and <a href="https://www.rfc-editor.org/rfc/rfc9420" target="_blank" rel="noopener">MLS</a></h3>
-        <p>Our congregation gathers on <a href="https://matrix.to/#/#churchofcrypto:matrix.org" target="_blank" rel="noopener">Matrix</a>. Turn on
-          encryption and verify each other's sessions by comparing emoji. MLS (RFC 9420) is the IETF standard for
-          end-to-end encrypted group chat.</p></div>
-      <div><h3><a href="https://age-encryption.org" target="_blank" rel="noopener">age</a> and <a href="https://gnupg.org" target="_blank" rel="noopener">GnuPG</a></h3>
-        <p>For files: age is small, modern and hard to misuse. OpenPGP (GnuPG) signs and encrypts email and software releases;
-          it is powerful but easy to get wrong, so learn it carefully.</p></div>
-      <div><h3>TLS 1.3, <a href="https://www.wireguard.com" target="_blank" rel="noopener">WireGuard</a>, SSH</h3>
-        <p>For connections: the padlock in your browser, a VPN tunnel, a remote shell. Underneath them all sit authenticated
-          encryption (AES-GCM, ChaCha20-Poly1305), elliptic-curve key agreement (X25519) and signatures (Ed25519).</p></div>
-    </div>
-    <p class="muted" style="max-width:64ch">To learn which tool fits which threat, start with the EFF's
-      <a href="https://ssd.eff.org" target="_blank" rel="noopener">Surveillance Self-Defense</a> guides. Mathematics is the sacrament;
-      the protocol is what protects you.</p>
+      device. Today that faith rests on published mathematics, reviewed in the open and fixed in standards. Trust the
+      standard, use a maintained implementation of it, and don't build your own.</p>
+
+    <h3>The foundations</h3>
+    <ul class="refs">
+      <li>Auguste Kerckhoffs, <a href="https://www.petitcolas.net/kerckhoffs/" target="_blank" rel="noopener">“La cryptographie militaire”</a>, 1883. Only the key may be secret.</li>
+      <li>Claude Shannon, “Communication Theory of Secrecy Systems”, <i>Bell System Technical Journal</i>, 1949. Secrecy as mathematics.</li>
+      <li>Whitfield Diffie and Martin Hellman, <a href="https://ee.stanford.edu/~hellman/publications/24.pdf" target="_blank" rel="noopener">“New Directions in Cryptography”</a>, 1976. Agreeing a key in public, which ends the need to meet and hand over a disk.</li>
+    </ul>
+
+    <h3>The mathematics</h3>
+    <div class="table-wrap"><table class="std">
+      <thead><tr><th scope="col">Purpose</th><th scope="col">Standard</th><th scope="col">What it gives you</th></tr></thead>
+      <tbody><tr><th scope="row">Symmetric encryption</th><td>AES (<a href="https://csrc.nist.gov/pubs/fips/197/final" target="_blank" rel="noopener">FIPS 197</a>) in GCM mode (<a href="https://csrc.nist.gov/pubs/sp/800/38/d/final" target="_blank" rel="noopener">NIST SP 800-38D</a>); ChaCha20-Poly1305 (<a href="https://www.rfc-editor.org/rfc/rfc8439" target="_blank" rel="noopener">RFC 8439</a>)</td><td>Authenticated: a changed message is rejected, not misread</td></tr><tr><th scope="row">Key agreement</th><td>X25519 (<a href="https://www.rfc-editor.org/rfc/rfc7748" target="_blank" rel="noopener">RFC 7748</a>); ML-KEM (<a href="https://csrc.nist.gov/pubs/fips/203/final" target="_blank" rel="noopener">FIPS 203</a>)</td><td>Two strangers agree a key in public. ML-KEM resists quantum computers</td></tr><tr><th scope="row">Signatures</th><td>Ed25519 (<a href="https://www.rfc-editor.org/rfc/rfc8032" target="_blank" rel="noopener">RFC 8032</a>); ML-DSA (<a href="https://csrc.nist.gov/pubs/fips/204/final" target="_blank" rel="noopener">FIPS 204</a>), SLH-DSA (<a href="https://csrc.nist.gov/pubs/fips/205/final" target="_blank" rel="noopener">FIPS 205</a>)</td><td>Proves who wrote it, which no disk can do</td></tr><tr><th scope="row">Hashing</th><td>SHA-2 (<a href="https://csrc.nist.gov/pubs/fips/180-4/upd1/final" target="_blank" rel="noopener">FIPS 180-4</a>); SHA-3 (<a href="https://csrc.nist.gov/pubs/fips/202/final" target="_blank" rel="noopener">FIPS 202</a>)</td><td>The coin's disk order is a SHA-256 shuffle</td></tr><tr><th scope="row">Key derivation</th><td>HKDF (<a href="https://www.rfc-editor.org/rfc/rfc5869" target="_blank" rel="noopener">RFC 5869</a>); Argon2 for passwords (<a href="https://www.rfc-editor.org/rfc/rfc9106" target="_blank" rel="noopener">RFC 9106</a>)</td><td>Turns shared secrets and passwords into keys</td></tr></tbody>
+    </table></div>
+    <p class="note">ML-KEM, ML-DSA and SLH-DSA are NIST's post-quantum standards (2024).</p>
+
+    <h3>The systems built on it</h3>
+    <div class="faith"><div><span class="label">Private messages</span><h3>Signal Protocol: <a href="https://signal.org/docs/specifications/pqxdh/" target="_blank" rel="noopener">PQXDH</a> key agreement and the <a href="https://signal.org/docs/specifications/doubleratchet/" target="_blank" rel="noopener">Double Ratchet</a></h3><p>Fresh keys for every message, so a stolen phone does not expose the past. Verify safety numbers in person: the modern handing-over of the disk.</p><p class="impl">Implemented in: libsignal (the Signal app)</p></div><div><span class="label">Group messages</span><h3>Messaging Layer Security, <a href="https://www.rfc-editor.org/rfc/rfc9420" target="_blank" rel="noopener">RFC 9420</a>, built on HPKE (<a href="https://www.rfc-editor.org/rfc/rfc9180" target="_blank" rel="noopener">RFC 9180</a>)</h3><p>The IETF standard for end-to-end encrypted groups of any size.</p><p class="impl">Implemented in: OpenMLS, MLSpp</p></div><div><span class="label">Our Matrix room</span><h3>Olm and Megolm, in the <a href="https://spec.matrix.org/latest/client-server-api/#end-to-end-encryption" target="_blank" rel="noopener">Matrix specification</a></h3><p>Olm is a Double Ratchet; Megolm shares room keys. Verify sessions by comparing emoji.</p><p class="impl">Implemented in: vodozemac (Element and other clients)</p></div><div><span class="label">The web</span><h3>TLS 1.3, <a href="https://www.rfc-editor.org/rfc/rfc8446" target="_blank" rel="noopener">RFC 8446</a></h3><p>The padlock in your browser.</p><p class="impl">Implemented in: OpenSSL, BoringSSL, rustls</p></div><div><span class="label">Tunnels</span><h3><a href="https://noiseprotocol.org/noise.html" target="_blank" rel="noopener">Noise Protocol Framework</a>; <a href="https://www.wireguard.com/papers/wireguard.pdf" target="_blank" rel="noopener">WireGuard</a> (NDSS 2017)</h3><p>A small handshake you can read in an afternoon.</p><p class="impl">Implemented in: WireGuard</p></div><div><span class="label">Remote shells</span><h3>SSH, <a href="https://www.rfc-editor.org/rfc/rfc4253" target="_blank" rel="noopener">RFC 4253</a>, with curve25519-sha256 (<a href="https://www.rfc-editor.org/rfc/rfc8731" target="_blank" rel="noopener">RFC 8731</a>) and Ed25519 keys (<a href="https://www.rfc-editor.org/rfc/rfc8709" target="_blank" rel="noopener">RFC 8709</a>)</h3><p class="impl">Implemented in: OpenSSH</p></div><div><span class="label">Files</span><h3><a href="https://c2sp.org/age" target="_blank" rel="noopener">age v1</a> (C2SP)</h3><p>Small and hard to misuse.</p><p class="impl">Implemented in: age, rage</p></div><div><span class="label">Email and signed releases</span><h3>OpenPGP, <a href="https://www.rfc-editor.org/rfc/rfc9580" target="_blank" rel="noopener">RFC 9580</a></h3><p class="impl">Implemented in: Sequoia PGP; GnuPG implements the earlier RFC 4880</p></div></div>
+    <p class="muted" style="max-width:64ch">Mathematics is the sacrament; the protocol is what protects you.</p>
   </section>
 
   <footer>
