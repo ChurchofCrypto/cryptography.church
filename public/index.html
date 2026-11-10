@@ -1,43 +1,277 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Welcome to the Church of Cryptography - Where Math Meets Faith"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
-    <!--
-      manifest.json provides metadata used when your web app is installed on a
-      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
-    -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <!--
-      Notice the use of %PUBLIC_URL% in the tags above.
-      It will be replaced with the URL of the `public` folder during the build.
-      Only files inside the `public` folder can be referenced from the HTML.
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Church of Cryptography</title>
+<meta name="description" content="The Church of Cryptography: a community for the sacred art of secure communication. Workshops at Milliways, 40C3, Hamburg, 27–30 December 2026.">
+<meta name="theme-color" content="#0c0e0d">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://cryptography.church/">
+<meta property="og:title" content="Church of Cryptography">
+<meta property="og:description" content="In cryptographia confidimus. Workshops at Milliways, 40C3, Hamburg, 27–30 December 2026.">
+<meta property="og:image" content="https://cryptography.church/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Fragment+Mono&family=Jersey+10&display=swap">
+<link rel="stylesheet" href="/styles.css">
+</head>
+<body>
 
-      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
-      work correctly both with client-side routing and a non-root public URL.
-      Learn how to configure a non-root public URL by running `npm run build`.
-    -->
-    <title>Church of Cryptography</title>
-  </head>
-  <body>
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <!--
-      This HTML file is a template.
-      If you open it directly in the browser, you will see an empty page.
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+  <defs>
+    <symbol id="key" viewBox="-6 -6 12 12"><circle cx="0" cy="-3.4" r="2.2" fill="none" stroke="currentColor" stroke-width="1.2"/><path d="M-.55 -1.2h1.1v6.6h-1.1zM.5 2.2h2v1h-2zM.5 3.9h1.5v1h-1.5z" fill="currentColor"/></symbol>
+  </defs>
+</svg>
 
-      You can add webfonts, meta tags, or analytics to this file.
-      The build step will place the bundled scripts into the <body> tag.
+<header class="coin-band">
+  <div class="inner">
+    <div class="topbar">
+      <a class="mark" href="#top" aria-label="Church of Cryptography, top of page"><svg aria-hidden="true"><use href="/emblem.svg#emblem"/></svg>Church of Cryptography</a>
+      <nav aria-label="Sections">
+        <ul>
+          <li><a href="#about">About</a></li>
+          <li><a href="#teachings">Teachings</a></li>
+          <li><a href="#ciphers">Sacred Ciphers</a></li>
+          <li><a href="/alberti.html">Alberti Disk</a></li>
+          <li><a href="#events">Events</a></li>
+          <li><a class="join" href="https://matrix.to/#/#churchofcrypto:matrix.org" target="_blank" rel="noopener noreferrer">Join Us</a></li>
+        </ul>
+      </nav>
+    </div>
 
-      To begin the development, run `npm start` or `yarn start`.
-      To create a production bundle, use `npm run build` or `yarn build`.
-    -->
-  </body>
+    <div class="hero" id="top">
+      <svg class="seal" viewBox="-50 -50 100 100" role="img" aria-label="The emblem: Alberti's winged eye over crossed keys, ringed by the mottos In cryptographia confidimus and Per mathesin transcendimus">
+        <defs>
+          <path id="arc-top" d="M -42.6 0 A 42.6 42.6 0 0 1 42.6 0"/>
+          <path id="arc-bot" d="M -46 0 A 46 46 0 0 0 46 0"/>
+        </defs>
+        <circle r="49" fill="var(--coin-raised)"/>
+        <circle r="49" fill="none" stroke="var(--coin-gold)" stroke-width=".7"/>
+        <circle r="39.5" fill="none" stroke="var(--coin-dim)" stroke-width=".35"/>
+        <g stroke="var(--coin-dim)" stroke-width=".35"><line x1="3.44" y1="-39.35" x2="3.57" y2="-40.84"/><line x1="10.22" y1="-38.15" x2="10.61" y2="-39.60"/><line x1="16.69" y1="-35.80" x2="17.33" y2="-37.16"/><line x1="22.66" y1="-32.36" x2="23.52" y2="-33.59"/><line x1="27.93" y1="-27.93" x2="28.99" y2="-28.99"/><line x1="32.36" y1="-22.66" x2="33.59" y2="-23.52"/><line x1="35.80" y1="-16.69" x2="37.16" y2="-17.33"/><line x1="38.15" y1="-10.22" x2="39.60" y2="-10.61"/><line x1="39.35" y1="-3.44" x2="40.84" y2="-3.57"/><line x1="39.35" y1="3.44" x2="40.84" y2="3.57"/><line x1="38.15" y1="10.22" x2="39.60" y2="10.61"/><line x1="35.80" y1="16.69" x2="37.16" y2="17.33"/><line x1="32.36" y1="22.66" x2="33.59" y2="23.52"/><line x1="27.93" y1="27.93" x2="28.99" y2="28.99"/><line x1="22.66" y1="32.36" x2="23.52" y2="33.59"/><line x1="16.69" y1="35.80" x2="17.33" y2="37.16"/><line x1="10.22" y1="38.15" x2="10.61" y2="39.60"/><line x1="3.44" y1="39.35" x2="3.57" y2="40.84"/><line x1="-3.44" y1="39.35" x2="-3.57" y2="40.84"/><line x1="-10.22" y1="38.15" x2="-10.61" y2="39.60"/><line x1="-16.69" y1="35.80" x2="-17.33" y2="37.16"/><line x1="-22.66" y1="32.36" x2="-23.52" y2="33.59"/><line x1="-27.93" y1="27.93" x2="-28.99" y2="28.99"/><line x1="-32.36" y1="22.66" x2="-33.59" y2="23.52"/><line x1="-35.80" y1="16.69" x2="-37.16" y2="17.33"/><line x1="-38.15" y1="10.22" x2="-39.60" y2="10.61"/><line x1="-39.35" y1="3.44" x2="-40.84" y2="3.57"/><line x1="-39.35" y1="-3.44" x2="-40.84" y2="-3.57"/><line x1="-38.15" y1="-10.22" x2="-39.60" y2="-10.61"/><line x1="-35.80" y1="-16.69" x2="-37.16" y2="-17.33"/><line x1="-32.36" y1="-22.66" x2="-33.59" y2="-23.52"/><line x1="-27.93" y1="-27.93" x2="-28.99" y2="-28.99"/><line x1="-22.66" y1="-32.36" x2="-23.52" y2="-33.59"/><line x1="-16.69" y1="-35.80" x2="-17.33" y2="-37.16"/><line x1="-10.22" y1="-38.15" x2="-10.61" y2="-39.60"/><line x1="-3.44" y1="-39.35" x2="-3.57" y2="-40.84"/></g>
+        <text><textPath href="#arc-top" startOffset="50%" text-anchor="middle">IN CRYPTOGRAPHIA CONFIDIMUS</textPath></text>
+        <text><textPath href="#arc-bot" startOffset="50%" text-anchor="middle">PER MATHESIN TRANSCENDIMUS</textPath></text>
+        <circle cx="-44.3" cy="0" r="1.1" fill="var(--coin-gold)"/>
+        <circle cx="44.3" cy="0" r="1.1" fill="var(--coin-gold)"/>
+        <use href="/emblem.svg#emblem" x="-27" y="-30" width="54" height="58" style="color:var(--coin-gold)"/>
+      </svg>
+
+      <div class="hero-text">
+        <h1 id="title" aria-label="Church of Cryptography"><span aria-hidden="true" id="title-glyphs">Church of<br>Cryptography</span></h1>
+        <p class="tagline">Where math meets faith.</p>
+        <div class="motto" lang="la">
+          <i>In cryptographia confidimus, per mathesin transcendimus.</i>
+          <span lang="en">In cryptography we trust; through mathematics we transcend.</span>
+        </div>
+        <div class="cta">
+          <a class="btn primary" href="/alberti.html">Try the Alberti disk</a>
+          <a class="btn" href="#events">Our 40C3 workshops</a>
+        </div>
+        <p class="cipher-note">On our coin, with <span class="sym">k</span> under <b>C</b>, the title reads
+          <span class="sym">C kξtψkξ αj kψdπwαθψlπξd</span>.
+          <button type="button" id="replay" class="linkish" hidden>Decrypt it again</button></p>
+      </div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section id="about" class="inner" aria-labelledby="about-h">
+    <div class="sec-head"><h2 id="about-h">About the Church</h2></div>
+    <div class="about">
+      <div>
+        <p class="lede">The Church of Cryptography is a community dedicated to the sacred art of secure communication and the preservation of privacy in the digital age.</p>
+        <div class="hist">
+          <h3>Our history</h3>
+          <p>Founded in the digital realm, we continue the ancient tradition of cryptographers, codebreakers, and privacy advocates who have shaped the course of human history.</p>
+        </div>
+      </div>
+      <div class="beliefs">
+        <h3>Our core beliefs</h3>
+        <ul>
+          <li><svg aria-hidden="true"><use href="#key"/></svg>Privacy is a fundamental human right</li>
+          <li><svg aria-hidden="true"><use href="#key"/></svg>Encryption is the shield of the digital age</li>
+          <li><svg aria-hidden="true"><use href="#key"/></svg>Knowledge should be free and accessible</li>
+          <li><svg aria-hidden="true"><use href="#key"/></svg>Security through transparency, not obscurity</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="teachings" class="inner" aria-labelledby="teach-h">
+    <div class="sec-head"><h2 id="teach-h">Sacred Teachings</h2></div>
+    <ol class="principles">
+      <li><span class="num" aria-hidden="true">I</span><span><span class="sr">The first principle: </span><q>Trust in mathematics, for it is the universal language of truth.</q></span></li>
+      <li><span class="num" aria-hidden="true">II</span><span><span class="sr">The second principle: </span><q>In the realm of bits and bytes, privacy is power.</q></span></li>
+      <li><span class="num" aria-hidden="true">III</span><span><span class="sr">The third principle: </span><q>Share knowledge freely, but protect secrets fiercely.</q></span></li>
+      <li><span class="num" aria-hidden="true">IV</span><span><span class="sr">The fourth principle: </span><q>The strongest walls are built with open source blocks.</q></span></li>
+    </ol>
+  </section>
+
+  <section id="ciphers" class="inner" aria-labelledby="ciph-h">
+    <div class="sec-head"><h2 id="ciph-h">Sacred Ciphers</h2></div>
+    <div class="eras">
+      <div class="era">
+        <h3>Classical ciphers</h3>
+        <ul>
+          <li><span class="nm">Caesar Cipher</span><span class="ep">The Ancient Guardian</span></li>
+          <li><span class="nm"><a href="/alberti.html">Alberti Disk</a></span><span class="ep">The First Polyalphabet</span>
+            <span class="also">Try the 40C3 coin, or print a paper one: <a href="/paper/alberti-paper-a4.pdf">A4</a> /
+              <a href="/paper/alberti-paper-letter.pdf">Letter</a>; or <a href="/lean.html">see it proved in Lean</a>.</span></li>
+          <li><span class="nm">Vigenère Cipher</span><span class="ep">The Renaissance Key</span></li>
+          <li><span class="nm">Playfair Cipher</span><span class="ep">The Diplomatic Shield</span></li>
+        </ul>
+      </div>
+      <div class="era">
+        <h3>Modern guardians</h3>
+        <ul>
+          <li><span class="nm">RSA</span><span class="ep">The Public Key Prophet</span></li>
+          <li><span class="nm">AES</span><span class="ep">The Symmetric Standard</span></li>
+          <li><span class="nm">Signal Protocol</span><span class="ep">The Message Protector</span></li>
+        </ul>
+        <p class="more">Why the old ciphers fall, and where to put your faith instead: <a href="/alberti.html#security">Secret, but not secure</a>.</p>
+      </div>
+      <div class="era">
+        <h3>Future sentinels</h3>
+        <ul>
+          <li><span class="nm">Quantum Cryptography</span><span class="ep">The Next Evolution</span></li>
+          <li><span class="nm">Homomorphic Encryption</span><span class="ep">The Hidden Calculator</span></li>
+          <li><span class="nm">Zero-Knowledge Proofs</span><span class="ep">The Silent Validator</span></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="events" class="inner" aria-labelledby="ev-h">
+    <div class="sec-head"><h2 id="ev-h">Sacred Gatherings</h2></div>
+
+    <div class="poster">
+      <div class="p-head">
+        <div class="p-title"><span class="big">40C3</span><span class="sub">Chaos Communication Congress</span></div>
+        <div class="p-meta">
+          <span><b>Hamburg, 27–30 December 2026.</b> Find us inside the Milliways assembly.</span>
+          <span>Times and places to be announced; the program may still change.
+            <a href="https://events.ccc.de/congress/2026/infos/startpage.html" target="_blank" rel="noopener noreferrer">About 40C3</a></span>
+        </div>
+      </div>
+
+      <div>
+        <h3>Workshops</h3>
+        <ul class="ws">
+          <li><span class="len">2 hours</span><span class="tt">Intro to Zero Knowledge</span>
+            <p class="ds">A speedrun from introductory zero knowledge to polynomial commitments, PLONK and layered proving systems.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">The Alberti Cipher: Build It, Use It, Break It</span>
+            <p class="ds">Build a paper copy of the 40C3 coin's cipher disk, send secret messages, then break them, and learn why “secret” is not “secure”. No laptop needed. Try it now: <a href="/alberti.html">the Alberti disk</a>.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">Halo2 Tutorial</span>
+            <p class="ds">Everybody writes a ZK circuit for a simple program. How ZK developed, from theory to smart contracts and beyond, and what its role in our world should be.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">Trustworthy AI</span>
+            <p class="ds">Federated learning with secure, robust and verifiable aggregation: a neural network whose (limited) trust comes only from cryptography and a majority of N parties, with no central authority.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">Garbled Circuits with Ireul</span>
+            <p class="ds">Multi-party computation with garbled circuits, using Ireul, an engine that brings together a decade of improvements. Maybe it is time for a comeback.</p></li>
+          <li><span class="len">1.5 hours</span><span class="tt">Formal Verification Quick-Dive: Proving Alberti's Cipher in Lean</span>
+            <p class="ds">Learn formal verification by proving the Alberti cipher correct, and see why “proved correct” is not “hard to break”. Preview it now: <a href="/lean.html">Proving the Alberti disk</a>.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">Dabao Eval Board: Walkthrough + Hello World</span>
+            <p class="ds">Hands-on with the Baochip Dabao board, compared with other small boards; secure computing at the edge.</p></li>
+          <li><span class="len">1 hour</span><span class="tt">Meshtastic, Reticulum and Friends</span>
+            <p class="ds">All the cool ways to message your friends off the grid, and the cryptography involved. Devices to try.</p></li>
+        </ul>
+      </div>
+    </div>
+
+    <h3 class="past-head">Previous gatherings</h3>
+    <details class="past">
+      <summary><span class="s">WHY 2025, August 2025 <span>Four days of sacred digital communion in the Netherlands</span></span></summary>
+      <div class="days">
+        <div><h4>Saturday 9th</h4><ul>
+          <li><span class="tm">11:00</span><span>Morning Espresso</span></li></ul></div>
+        <div><h4>Sunday 10th</h4><ul>
+          <li><span class="tm">10:00</span><span>Morning Espresso</span></li>
+          <li><span class="tm">14:00</span><span>Turn your Raspberry Pi into a Passkey.</span></li></ul></div>
+        <div><h4>Monday 11th</h4><ul>
+          <li><span class="tm">10:00</span><span>Morning Espresso</span></li>
+          <li><span class="tm">11:30</span><span>Espresso Workshop: how to make a good espresso at home, coffee science and tips.</span></li></ul></div>
+        <div><h4>Tuesday 12th</h4><ul>
+          <li><span class="tm">10:00</span><span>Morning Espresso</span></li>
+          <li><span class="tm">14:00</span><span>Turn your Raspberry Pi into a Passkey. (bis)</span></li></ul></div>
+      </div>
+    </details>
+    <details class="past">
+      <summary><span class="s">38C3, December 2024 <span>Six sessions at our assembly</span></span></summary>
+      <div class="days">
+        <div><h4>Day 1</h4><ul>
+          <li><span class="tm">13:00</span><span>Genesis: Safely Generating Keys with Chaos</span></li>
+          <li><span class="tm">16:00</span><span>The Holy Trinity of Randomness: Entropy, Chaos, and the Divine</span></li></ul></div>
+        <div><h4>Day 2</h4><ul>
+          <li><span class="tm">13:00</span><span>From Cypherpunks to Crypto Priests: Mastering PGP</span></li>
+          <li><span class="tm">16:00</span><span>Conjuring AI Angels: Summoning Wisdom in the Age of Algorithms</span></li>
+          <li><span class="tm">17:30</span><span>The Sacred Mesh: Weaving a Network of Faith Through Meshtastic</span></li></ul></div>
+        <div><h4>Day 3</h4><ul>
+          <li><span class="tm">13:00</span><span>Sanctuary in Silicon: Shielding Keys, Gods, and Prayer Portals in Trusted Execution Environments</span></li></ul></div>
+        <p class="link"><a href="https://events.ccc.de/congress/2024/hub/en/assembly/CoC/" target="_blank" rel="noopener noreferrer">Our 38C3 assembly page</a></p>
+      </div>
+    </details>
+  </section>
+</main>
+
+<footer class="coin-band">
+  <div class="inner foot">
+    <svg aria-hidden="true"><use href="/emblem.svg#emblem"/></svg>
+    <div class="m">
+      <i lang="la">Mille viae ad Chaos.</i>
+      <span>The winged eye is Alberti's own emblem, from his portrait medal of about 1450; the crossed keys are ours.</span>
+    </div>
+    <ul>
+      <li><a href="https://matrix.to/#/#churchofcrypto:matrix.org" target="_blank" rel="noopener noreferrer">Join us on Matrix</a></li>
+      <li><a href="/alberti.html">The Alberti disk</a></li>
+      <li><a href="/lean.html">Proving the Alberti disk</a></li>
+      <li><a href="#top">Back to top</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+// Optional: the title "decrypts" itself on load. Without JavaScript the page shows the plain title.
+(() => {
+  // The coin's cipher (same disk order as /alberti.html). Setting: k under C.
+  const OUT = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+  const DISK = "θξδgovyσαπβψcwteradzpζxnφhqimfluksbj";
+  const KI = DISK.indexOf("k"), SET = "C";
+  const enc = ch => { const i = OUT.indexOf(ch.toUpperCase()); return i < 0 ? ch : DISK[(i - OUT.indexOf(SET) + KI + 36) % 36]; };
+
+  const host = document.getElementById("title-glyphs");
+  const cells = [];
+  host.textContent = "";
+  ["Church of", "Cryptography"].forEach((line, li) => {
+    if (li) host.appendChild(document.createElement("br"));
+    for (const ch of line) {
+      const s = document.createElement("span");
+      s.className = "c"; s.dataset.p = ch; s.dataset.e = enc(ch); s.textContent = ch;
+      host.appendChild(s); if (ch !== " ") cells.push(s);
+    }
+  });
+
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  let timers = [];
+  const show = (s, e) => { s.textContent = e ? s.dataset.e : s.dataset.p; s.classList.toggle("enc", e); };
+  function play() {
+    timers.forEach(clearTimeout); timers = [];
+    cells.forEach(s => show(s, true));
+    if (reduce) timers.push(setTimeout(() => cells.forEach(s => show(s, false)), 1600));
+    else cells.forEach((s, i) => timers.push(setTimeout(() => show(s, false), 500 + i * 55)));
+  }
+  const replay = document.getElementById("replay");
+  replay.hidden = false;
+  replay.addEventListener("click", play);
+  if (!reduce) play();
+})();
+</script>
+</body>
 </html>
