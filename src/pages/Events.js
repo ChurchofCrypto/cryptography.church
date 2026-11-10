@@ -35,7 +35,12 @@ const WORKSHOPS_40C3 = [
 const ALSO_PLANNED_40C3 = [
   {
     title: "Formal Verification Quick-Dive: Proving Alberti's Cipher in Lean",
-    desc: 'Learn formal verification by proving the Alberti cipher correct, and see why "proved correct" is not "hard to break".',
+    desc: (
+      <>
+        Learn formal verification by proving the Alberti cipher correct, and see why "proved correct" is not "hard to
+        break". Preview it now: <a href="/lean.html" className="cipher-link">Proving the Alberti disk</a>.
+      </>
+    ),
   },
   {
     title: 'Dabao Eval Board: Walkthrough + Hello World',
