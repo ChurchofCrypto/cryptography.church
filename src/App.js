@@ -17,6 +17,7 @@ function App() {
           <a href="#about" className="nav-link">About</a>
           <a href="#teachings" className="nav-link">Teachings</a>
           <a href="#ciphers" className="nav-link">Sacred Ciphers</a>
+          <a href="/alberti.html" className="nav-link">Alberti Disk</a>
           <a href="#events" className="nav-link">Events</a>
           <a href="https://matrix.to/#/#churchofcrypto:matrix.org" className="nav-link" target="_blank" rel="noopener noreferrer">Join Us</a>
         </nav>

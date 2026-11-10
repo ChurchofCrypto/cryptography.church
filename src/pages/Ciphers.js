@@ -7,7 +7,7 @@ function Ciphers() {
           <h3>Classical Ciphers</h3>
           <ul>
             <li>Caesar Cipher - The Ancient Guardian</li>
-            <li><a href="/alberti.html" className="cipher-link">Alberti Disk - The First Polyalphabet</a> (try the 40C3 coin, or print a paper one: <a href="/paper/alberti-paper-a4.pdf" className="cipher-link">A4</a> / <a href="/paper/alberti-paper-letter.pdf" className="cipher-link">Letter</a>)</li>
+            <li><a href="/alberti.html" className="cipher-link">Alberti Disk - The First Polyalphabet</a> (try the 40C3 coin, or print a paper one: <a href="/paper/alberti-paper-a4.pdf" className="cipher-link">A4</a> / <a href="/paper/alberti-paper-letter.pdf" className="cipher-link">Letter</a>; or <a href="/lean.html" className="cipher-link">see it proved in Lean</a>)</li>
             <li>Vigenère Cipher - The Renaissance Key</li>
             <li>Playfair Cipher - The Diplomatic Shield</li>
           </ul>

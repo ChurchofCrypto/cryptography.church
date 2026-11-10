@@ -52,13 +52,6 @@ const WORKSHOPS_40C3 = [
   },
 ];
 
-const ALSO_PLANNED_40C3 = [
-  {
-    title: 'Crepes & Coffee',
-    desc: 'Crepe hours after brunch, and perhaps at midnight, if the kitchen rules allow. Coffee and tea either way.',
-  },
-];
-
 function Events() {
   return (
     <section id="events" className="page-section">
@@ -86,13 +79,6 @@ function Events() {
             </div>
           ))}
 
-          <h4>Also planned</h4>
-          {ALSO_PLANNED_40C3.map((w) => (
-            <div className="event-item" key={w.title}>
-              <strong>{w.title}</strong>
-              <p className="event-desc">{w.desc}</p>
-            </div>
-          ))}
         </div>
 
         {/* Previous Gatherings - Collapsible */}
