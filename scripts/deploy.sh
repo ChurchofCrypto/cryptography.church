@@ -4,9 +4,8 @@
 BUCKET_NAME="cryptography.church"
 BUILD_DIRECTORY="build"
 
-# Build the React app
-echo "Building React app..."
-pnpm run build
+# Build: copy public/ to build/ (the site is static)
+./scripts/build.sh
 
 # Deploy to S3 with proper content types and caching
 echo "Deploying to S3..."

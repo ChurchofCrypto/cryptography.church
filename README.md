@@ -1,53 +1,31 @@
-# 🔮 The Sacred Texts of React: A Digital Grimoire
+# cryptography.church
 
-Blessed be this repository, consecrated by the holy [Create React App](https://github.com/facebook/create-react-app) incantation.
+The Church of Cryptography's website. It is a static site: everything in `public/` is served as is.
 
-## 🕯️ Sacred Rituals
+| File | What it is |
+|---|---|
+| `public/index.html` | The home page: About, Teachings, Sacred Ciphers, and Sacred Gatherings (events). |
+| `public/styles.css` | The home page's styles. Colours and type match `alberti.html`; light or dark follows the device. |
+| `public/emblem.svg` | The coin's emblem (winged eye and crossed keys), used by the home page. |
+| `public/og.png` | The preview image for links shared in chat and social media. |
+| `public/alberti.html`, `public/paper/` | The Alberti disk page and paper cut-out PDFs. |
+| `public/lean.html`, `public/lean-workshop.zip` | "Proving the Alberti disk" and the Lean workshop download. |
 
-Within this sanctified directory, these are the mystical incantations you may invoke:
+`alberti.html`, `lean.html`, the PDFs and the zip are generated in the badge project (`site/build.py --site` and
+`site/build_lean.py --site`); edit them there, not here.
 
-### 📜 `npm start`
+## Editing
 
-Summons the development realm into existence.\
-Channel your browser's energy to [http://localhost:3000](http://localhost:3000) to witness the manifestation.
+Edit `public/index.html` directly. To add an event, copy an existing `<li>` in the 40C3 workshop list; past
+events go in a `<details class="past">` block under "Previous gatherings".
 
-The realm shall reconstruct itself upon alteration of the sacred texts.\
-Prophecies of warning may appear in the console's crystal.
+## Preview
 
-### 🔮 `npm test`
+    ./scripts/build.sh
+    python3 -m http.server -d build 8000     # then open http://localhost:8000
 
-Invokes the Oracle of Testing in its perpetual divination mode.\
-Seek wisdom about [the testing rituals](https://facebook.github.io/create-react-app/docs/running-tests) in the ancient scrolls.
+## Deploy
 
-### ⚡ `npm run build`
-
-Performs the Grand Ritual of Production, channeling energies into the `build` sanctum.\
-This ceremony optimizes and encrypts the sacred React sigils for maximum power.
-
-The resulting artifacts are sealed with mystical hashes.\
-Your digital temple stands ready for deployment!
-
-### 🗝️ `npm run eject`
-
-**⚠️ Beware: This ritual cannot be undone. Once you cross this threshold, there is no return! ⚠️**
-
-This powerful incantation breaks the seals of configuration, revealing the deep mysteries within. It will unveil the ancient scripts (webpack, Babel, ESLint, and other forbidden knowledge) into your sanctuary.
-
-Only the bravest of initiates should attempt this ritual. The standard ceremonies will continue to function, but you alone will bear the responsibility of maintaining these exposed mysteries.
-
-## 🌟 Ancient Knowledge
-
-Delve deeper into the mysteries through the [Create React App grimoire](https://facebook.github.io/create-react-app/docs/getting-started).
-
-For those seeking enlightenment in the ways of React, consult the [React Chronicles](https://reactjs.org/).
-
-### 📚 Forbidden Tomes
-
-* [The Scroll of Code Splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-* [Analyzing the Ethereal Bundle](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-* [Crafting Progressive Web Enchantments](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-* [Advanced Configurations & Sigils](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-* [Deployment Ceremonies](https://facebook.github.io/create-react-app/docs/deployment)
-* [Troubleshooting Failed Minification Rituals](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
-
-May your components be pure and your state immutable. 🙏
+Pushing to `main` deploys (GitHub Actions, `.github/workflows/deploy.yml`): `scripts/deploy.sh` copies `public/` to
+`build/`, syncs it to the S3 bucket, and `scripts/invalidate-distribution.sh` clears the CloudFront cache.
+`main` is protected: changes go in by pull request, and commits must be signed.

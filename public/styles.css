@@ -1,0 +1,178 @@
+/* cryptography.church home page.
+   A black-and-gold coin band opens and closes the page (fixed colours, like the coin on /alberti.html); between them
+   one reading column on the Alberti page's paper tokens, light or dark with the device, and the 40C3 programme as a
+   fixed green poster in the 40C3 style-guide colours. */
+:root {
+  /* page: identical to alberti.html so the two pages read as one site in either theme */
+  --bg: #e7eae6; --surface: #f4f5f2; --ink: #151b18; --muted: #59625c; --line: #c6ccc6;
+  --gold: #85640f; --gold-soft: rgba(133, 100, 15, .12);
+  /* the coin: always black and gold */
+  --coin: #0c0e0d; --coin-raised: #141816; --coin-gold: #d9b65a; --coin-dim: #6f5d2e;
+  --coin-ink: #e9e5d9; --coin-muted: #a39a83; --coin-line: #2b2a22; --band-edge: var(--coin);
+  /* 40C3 accent (style guide): only inside the event poster */
+  --c40-bg: #001300; --c40-green: #75b44b; --c40-pale: #ebedf0; --c40-muted: #b7c2b0; --c40-line: #1f3a17;
+  --serif: "EB Garamond", "Garamond", "Iowan Old Style", Georgia, serif;
+  --mono: "Fragment Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --pixel: "Jersey 10", "Fragment Mono", ui-monospace, monospace;
+  --gutter-l: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-r: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #0e1110; --surface: #161a18; --ink: #e9e5d9; --muted: #9ca39d; --line: #2b312e;
+  --gold: #d9b65a; --gold-soft: rgba(217, 182, 90, .12); --band-edge: var(--coin-line);
+  color-scheme: dark } }
+:root[data-theme="dark"] {
+  --bg: #0e1110; --surface: #161a18; --ink: #e9e5d9; --muted: #9ca39d; --line: #2b312e;
+  --gold: #d9b65a; --gold-soft: rgba(217, 182, 90, .12); --band-edge: var(--coin-line);
+  color-scheme: dark }
+
+* { box-sizing: border-box }
+html { scroll-behavior: smooth }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto } }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 19px/1.6 var(--serif); font-variant-numeric: oldstyle-nums; overflow-x: hidden }
+h1, h2, h3 { font-weight: 500; line-height: 1.12; margin: 0; text-wrap: balance }
+p, ul, ol, dl, dd { margin: 0 }
+ul, ol { padding: 0; list-style: none }
+a { color: var(--gold); text-underline-offset: .18em; text-decoration-thickness: 1px }
+a:hover { text-decoration-thickness: 2px }
+:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; border-radius: 2px }
+.sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap }
+.inner { max-width: 1140px; margin: 0 auto; padding-left: var(--gutter-l); padding-right: var(--gutter-r) }
+.sym { font-weight: 600; color: var(--gold); letter-spacing: .02em }
+
+/* ---------- coin band (hero + footer) ---------- */
+.coin-band { background: var(--coin); color: var(--coin-ink) }
+header.coin-band { border-bottom: 1px solid var(--band-edge) }
+footer.coin-band { border-top: 1px solid var(--band-edge) }
+.coin-band a { color: var(--coin-gold) }
+.coin-band :focus-visible { outline-color: var(--coin-gold) }
+.coin-band .sym { color: var(--coin-gold) }
+.topbar { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 8px 24px; padding-block: 18px }
+.mark { display: inline-flex; align-items: center; gap: 10px; color: var(--coin-ink) !important; text-decoration: none; font-size: 17px; letter-spacing: .12em; text-transform: uppercase }
+.mark svg { width: 30px; height: 30px; color: var(--coin-gold) }
+nav ul { display: flex; flex-wrap: wrap; gap: 2px 4px }
+nav a { display: block; padding: 8px 10px; color: var(--coin-ink) !important; text-decoration: none; font-size: 18px }
+nav a:hover { color: var(--coin-gold) !important; text-decoration: underline; text-decoration-color: var(--coin-dim) }
+nav a.join { border: 1px solid var(--coin-dim); border-radius: 999px; padding-inline: 16px; margin-left: 6px }
+nav a.join:hover { border-color: var(--coin-gold); text-decoration: none }
+
+.hero { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 56px; align-items: center; padding-block: 28px 88px }
+.seal { width: 100%; max-width: 480px; justify-self: center; aspect-ratio: 1; display: block }
+.seal text { font-family: var(--serif); font-weight: 500; fill: var(--coin-gold); font-size: 4.3px; letter-spacing: .62px }
+.hero-text { display: grid; gap: 22px; min-width: 0 }
+h1 { font-size: clamp(48px, 7.2vw, 92px); letter-spacing: -.012em; line-height: 1.0; color: var(--coin-ink) }
+h1 .c { transition: color .3s }
+h1 .c.enc { color: var(--coin-gold); font-weight: 600 }
+.tagline { font-size: 26px; font-style: italic; color: var(--coin-muted) }
+.motto { display: grid; gap: 2px; padding-left: 18px; border-left: 1px solid var(--coin-dim) }
+.motto i { font-size: 21px; color: var(--coin-ink) }
+.motto span { font-size: 17px; color: var(--coin-muted) }
+.cta { display: flex; flex-wrap: wrap; gap: 12px }
+.btn { display: inline-block; padding: 9px 22px; border-radius: 999px; border: 1px solid var(--coin-dim); text-decoration: none; font-size: 19px; line-height: 1.3 }
+.btn:hover { border-color: var(--coin-gold) }
+.btn.primary { background: var(--coin-gold); border-color: var(--coin-gold); color: var(--coin) !important }
+.btn.primary:hover { background: #e6c675 }
+.cipher-note { font-size: 16px; color: var(--coin-muted); max-width: 46ch }
+.cipher-note .sym { font-size: 18px; white-space: nowrap }
+
+/* ---------- reading sections ---------- */
+main section { padding-block: 96px 0 }
+main section:last-child { padding-bottom: 104px }
+.sec-head { display: grid; gap: 12px; margin-bottom: 40px; max-width: 64ch }
+h2 { font-size: clamp(36px, 4.4vw, 52px) }
+.sec-head p { font-size: 21px; color: var(--muted) }
+h3 { font-size: 25px }
+
+.about { display: grid; grid-template-columns: minmax(0, 1.15fr) minmax(0, 1fr); gap: 32px 72px; align-items: start }
+.about .lede { font-size: 24px; line-height: 1.45; max-width: 34ch }
+.about .hist { display: grid; gap: 10px; margin-top: 36px; max-width: 52ch }
+.about .hist p { color: var(--muted) }
+.beliefs { display: grid; gap: 14px }
+.beliefs ul { border-top: 1px solid var(--line) }
+.beliefs li { padding: 14px 0 14px 34px; border-bottom: 1px solid var(--line); position: relative; font-size: 21px }
+.beliefs li svg { position: absolute; left: 0; top: 20px; width: 18px; height: 18px; color: var(--gold) }
+
+.principles { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 72px }
+.principles li { display: grid; grid-template-columns: 2.1em minmax(0, 1fr); gap: 18px; align-items: baseline; padding-block: 28px; border-top: 1px solid var(--line) }
+.principles .num { font-size: 40px; line-height: 1; color: var(--gold); text-align: right; font-variant-numeric: lining-nums }
+.principles q { font-size: 27px; font-style: italic; line-height: 1.32; quotes: "\201C" "\201D" }
+
+.eras { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 40px 48px }
+.era { display: grid; gap: 14px; align-content: start; min-width: 0 }
+.era h3 { padding-bottom: 10px; border-bottom: 1px solid var(--ink) }
+.era li { padding-block: 8px; border-bottom: 1px solid var(--line) }
+.era .nm { display: block; font-size: 20px; line-height: 1.3 }
+.era .ep { display: block; font-size: 17px; font-style: italic; color: var(--muted) }
+.era .also { display: block; font-size: 16px; color: var(--muted); margin-top: 2px }
+.era .more { font-size: 17px; color: var(--muted); padding-top: 6px }
+
+/* ---------- 40C3 poster ---------- */
+.poster { background: var(--c40-bg); color: var(--c40-pale); border-radius: 14px; padding: 40px 44px 44px; display: grid; gap: 30px }
+.poster a { color: var(--c40-green) }
+.poster :focus-visible { outline-color: var(--c40-green) }
+.p-head { display: flex; flex-wrap: wrap; justify-content: space-between; align-items: end; gap: 16px 32px; padding-bottom: 26px; border-bottom: 1px solid var(--c40-line) }
+.p-title { display: grid; gap: 6px }
+.p-title .big { font-family: var(--pixel); font-size: clamp(64px, 9vw, 104px); line-height: .8; color: var(--c40-green); letter-spacing: .01em }
+.p-title .sub { font-size: 22px }
+.p-meta { display: grid; gap: 4px; font-size: 18px; color: var(--c40-muted); max-width: 40ch }
+.p-meta b { color: var(--c40-pale); font-weight: 500 }
+.poster h3 { font-family: var(--pixel); font-weight: 400; font-size: 34px; letter-spacing: .02em; color: var(--c40-green) }
+.ws { display: grid }
+.ws li { display: grid; grid-template-columns: 5.4em minmax(0, 1fr); gap: 6px 24px; padding-block: 18px; border-top: 1px solid var(--c40-line) }
+.ws li:first-child { border-top: 0 }
+.ws .len { font-family: var(--mono); font-size: 15px; color: var(--c40-green); padding-top: 5px; white-space: nowrap }
+.ws .tt { font-size: 23px; line-height: 1.25 }
+.ws .ds { font-size: 18px; color: var(--c40-muted); max-width: 70ch; grid-column: 2 }
+details.past { border-bottom: 1px solid var(--line) }
+.past-head { margin-top: 48px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: 25px }
+details.past summary { cursor: pointer; padding: 18px 0; font-size: 21px; list-style: none; display: flex; justify-content: space-between; gap: 16px; align-items: baseline }
+details.past summary::-webkit-details-marker { display: none }
+details.past summary::after { content: "Show"; font-size: 16px; color: var(--gold) }
+details.past[open] summary::after { content: "Hide" }
+details.past summary .s span { color: var(--muted); font-size: 17px; margin-left: 12px }
+.days { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px 40px; padding-bottom: 24px }
+.days h4 { font-size: 17px; font-weight: 500; color: var(--muted); margin: 0 0 8px }
+.days li { display: grid; grid-template-columns: 5ch minmax(0, 1fr); gap: 12px; padding-block: 6px; font-size: 18px; line-height: 1.35 }
+.days .tm { font-family: var(--mono); font-size: 14px; color: var(--gold); padding-top: 3px }
+.days .link { grid-column: 1 / -1; font-size: 17px }
+
+/* ---------- footer ---------- */
+footer { margin-top: 0 }
+.foot { display: grid; grid-template-columns: auto minmax(0, 1fr) auto; gap: 24px 40px; align-items: center; padding-block: 56px 64px }
+.foot > svg { width: 92px; height: 92px; color: var(--coin-gold) }
+.foot .m { display: grid; gap: 6px }
+.foot .m i { font-size: 22px }
+.foot .m span { font-size: 16px; color: var(--coin-muted); max-width: 60ch }
+.foot ul { display: grid; gap: 6px; text-align: right; font-size: 18px }
+
+/* ---------- narrow ---------- */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 28px; padding-block: 8px 64px }
+  .seal { max-width: 300px }
+  .about { grid-template-columns: minmax(0, 1fr) }
+  .principles { grid-template-columns: minmax(0, 1fr) }
+  .eras { grid-template-columns: minmax(0, 1fr); gap: 36px }
+  .foot { grid-template-columns: minmax(0, 1fr) }
+  .foot ul { text-align: left }
+}
+@media (max-width: 560px) {
+  body { font-size: 18px }
+  .topbar { padding-block: 12px }
+  nav ul { margin-left: -10px }
+  nav a { font-size: 17px; padding: 8px 9px }
+  nav a.join { margin-left: 2px; padding-inline: 13px }
+  .tagline { font-size: 22px }
+  main section { padding-top: 72px }
+  .about .lede { font-size: 22px }
+  .principles li { grid-template-columns: 1.9em minmax(0, 1fr); gap: 12px; padding-block: 22px }
+  .principles .num { font-size: 30px }
+  .principles q { font-size: 23px }
+  .poster { padding: 28px 18px 30px; border-radius: 10px; margin-inline: -4px }
+  .ws li { grid-template-columns: minmax(0, 1fr); gap: 4px }
+  .ws .ds { grid-column: 1 }
+  .ws .len { padding-top: 0 }
+  details.past summary .s span { display: block; margin-left: 0 }
+}
+[hidden] { display: none !important }
+img { max-width: 100% }
+.linkish { font: inherit; font-size: 16px; color: var(--coin-gold); background: none; border: 0; padding: 0; cursor: pointer; text-decoration: underline; text-underline-offset: .18em }
