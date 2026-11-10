@@ -30,11 +30,9 @@ const WORKSHOPS_40C3 = [
     length: '1 h',
     desc: 'Multi-party computation with garbled circuits, using Ireul, an engine that brings together a decade of improvements. Maybe it is time for a comeback.',
   },
-];
-
-const ALSO_PLANNED_40C3 = [
   {
     title: "Formal Verification Quick-Dive: Proving Alberti's Cipher in Lean",
+    length: '1.5 h',
     desc: (
       <>
         Learn formal verification by proving the Alberti cipher correct, and see why "proved correct" is not "hard to
@@ -44,12 +42,17 @@ const ALSO_PLANNED_40C3 = [
   },
   {
     title: 'Dabao Eval Board: Walkthrough + Hello World',
+    length: 'TBA',
     desc: 'Hands-on with the Baochip Dabao board, compared with other small boards; secure computing at the edge.',
   },
   {
     title: 'Meshtastic, Reticulum and Friends',
+    length: 'TBA',
     desc: 'All the cool ways to message your friends off the grid, and the cryptography involved. Devices to try.',
   },
+];
+
+const ALSO_PLANNED_40C3 = [
   {
     title: 'Crepes & Coffee',
     desc: 'Crepe hours after brunch, and perhaps at midnight, if the kitchen rules allow. Coffee and tea either way.',
