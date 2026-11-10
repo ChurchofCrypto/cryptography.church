@@ -42,12 +42,12 @@ const WORKSHOPS_40C3 = [
   },
   {
     title: 'Dabao Eval Board: Walkthrough + Hello World',
-    length: 'TBA',
+    length: '1 h',
     desc: 'Hands-on with the Baochip Dabao board, compared with other small boards; secure computing at the edge.',
   },
   {
     title: 'Meshtastic, Reticulum and Friends',
-    length: 'TBA',
+    length: '1 h',
     desc: 'All the cool ways to message your friends off the grid, and the cryptography involved. Devices to try.',
   },
 ];
