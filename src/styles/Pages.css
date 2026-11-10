@@ -191,4 +191,18 @@ h5 {
 
 .previous-gatherings .event-header {
   margin-top: 1rem;
-} 
+}
+
+.cipher-link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.event-note {
+  text-align: left;
+  margin: -1rem 0 1rem 0;
+}
+
+.event-desc {
+  margin: 0.5rem 0 0 0;
+}

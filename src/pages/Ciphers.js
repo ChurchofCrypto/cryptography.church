@@ -7,6 +7,7 @@ function Ciphers() {
           <h3>Classical Ciphers</h3>
           <ul>
             <li>Caesar Cipher - The Ancient Guardian</li>
+            <li><a href="/alberti.html" className="cipher-link">Alberti Disk - The First Polyalphabet</a> (try the 40C3 coin, or print a paper one: <a href="/paper/alberti-paper-a4.pdf" className="cipher-link">A4</a> / <a href="/paper/alberti-paper-letter.pdf" className="cipher-link">Letter</a>)</li>
             <li>Vigenère Cipher - The Renaissance Key</li>
             <li>Playfair Cipher - The Diplomatic Shield</li>
           </ul>
@@ -19,6 +20,10 @@ function Ciphers() {
             <li>AES - The Symmetric Standard</li>
             <li>Signal Protocol - The Message Protector</li>
           </ul>
+          <p>
+            Why the old ciphers fall, and where to put your faith instead:{' '}
+            <a href="/alberti.html#security" className="cipher-link">Secret, but not secure</a>
+          </p>
         </div>
 
         <div className="cipher-category">
