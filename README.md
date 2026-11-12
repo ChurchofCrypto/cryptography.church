@@ -13,7 +13,8 @@ The Church of Cryptography's website. It is a static site: everything in `public
 | `public/alberti.html`, `public/paper/` | The Alberti disk page and paper cut-out PDFs. |
 | `public/lean.html`, `public/lean-workshop.zip` | "Proving the Alberti disk" and the Lean workshop download. |
 
-`alberti.html`, `lean.html`, the PDFs and the zip are generated in the badge project (`site/build.py --site` and
+`alberti.html`, `lean.html`, the PDFs and the zip are generated from
+[ChurchofCrypto/alberti-coin](https://github.com/ChurchofCrypto/alberti-coin) (`site/build.py --site` and
 `site/build_lean.py --site`); edit them there, not here.
 
 ## Editing
