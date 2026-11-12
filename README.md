@@ -8,6 +8,8 @@ The Church of Cryptography's website. It is a static site: everything in `public
 | `public/styles.css` | The home page's styles. Colours and type match `alberti.html`; light or dark follows the device. |
 | `public/emblem.svg` | The coin's emblem (winged eye and crossed keys), used by the home page. |
 | `public/og.png` | The preview image for links shared in chat and social media. |
+| `public/favicon*`, `public/*-icon*.png`, `public/android-chrome-*.png` | Favicons and app icons, made from the emblem. |
+| `brand/` | Emblem raster files, including the GitHub organization's avatar. Not deployed. See `brand/README.md`. |
 | `public/alberti.html`, `public/paper/` | The Alberti disk page and paper cut-out PDFs. |
 | `public/lean.html`, `public/lean-workshop.zip` | "Proving the Alberti disk" and the Lean workshop download. |
 
